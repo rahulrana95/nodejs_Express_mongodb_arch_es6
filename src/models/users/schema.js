@@ -11,7 +11,15 @@ const schema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  image: String,
+  contactNumber: Number,
+  country: String,
+  appsAllowed: [Number]
 });
 
 module.exports = { schema };

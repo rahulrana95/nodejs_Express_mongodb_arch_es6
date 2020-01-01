@@ -9,14 +9,13 @@ class UserController extends Controller {
     super(service);
   }
 
-  async signup (req, res) {
-    console.log(req.body);
+  async add (req, res) {
     const user = new User({
       ...req.body
     });
 
     try {
-      const savedUser = await user.save();
+      const savedUser = await user.save({_id: "5e0c72b55e143e197bde99aa"});
       res.json(savedUser);
     } catch (err) {
       res.json({
@@ -26,7 +25,7 @@ class UserController extends Controller {
     }
   };
 
-  async login (req, res) {
+  async get (req, res) {
     const {username} = req.body;
 
     try {
