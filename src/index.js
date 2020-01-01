@@ -1,7 +1,7 @@
-var express = require('express')
-var app = express()
+const server = require('./server');
+import './database';
+const configConstants = require('./constants/config');
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-  res.send('hello world')
+server.listen(configConstants.PORT, () => {
+    console.log(`Server started at PORT:${configConstants.PORT}`)
 })
